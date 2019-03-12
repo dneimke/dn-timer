@@ -59,9 +59,16 @@ export class PausableTimer {
 
 
     public stop() {
-        this.elapsedTimer.start();        
+        
         this.currentState = TimerState.Stopped;
+        
+        this.elapsedTimer.stop();
+        this.totalTime = 0;
+        this.pausedTimer.stop();   
+        this.pausedTime = 0;
+        this.totalPausedTime = 0;
+        
         this.state$.next(this.currentState);
-        this.tick$.next(0);
+        this.tick$.next(this.elapsedTime());
     }
 }
