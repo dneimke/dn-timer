@@ -1,0 +1,8 @@
+#time-label {
+    background: #0f3854;
+    padding: 4px 20px;
+    border-radius: 25px;
+    font-family: "Share Tech Mono",monospace;
+    color: #daf6ff;
+    text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10,175,230,0);
+}

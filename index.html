@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer test page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/dist/css/site.css" />
+</head>
+<body>
+
+    <div class="container-fluid" style="margin-top: 45px" id="page-container">
+
+        <section data-bind="visible: !isRunning()">
+            <p class="lead text-center" style="margin-top: 35px">
+                Click 'Start' to start a new timer .
+            </p>
+
+            <div class="text-center">
+                <button class="btn btn-success" id="start-button" data-bind="click: onStartClick">
+                    <span class="glyphicon glyphicon-play" style="margin-right: 5px"> </span>
+                    Start
+                </button>
+            </div>
+        </section>
+
+
+        <section data-bind="visible: isRunning">
+            <div class="row text-center">
+                <div class="col-md-12 text-center mb-4">
+                    <span class="time" id="time-label" data-bind="text: formattedTime"></span>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button class="btn btn-danger" id="end-button" data-bind="click: onStopClick">
+                        <span class="glyphicon glyphicon-stop" style="margin-right: 5px"> </span>
+                        Stop
+                    </button>
+                    <button class="btn btn-outline-secondary" id="end-button" data-bind="click: onPauseClick, visible: !isPaused()">
+                        <span class="glyphicon glyphicon-pause" style="margin-right: 5px"> </span>
+                        Pause
+                    </button>
+                    <button class="btn btn-outline-secondary" id="end-button" data-bind="click: onResumeClick, visible: isPaused">
+                        <span class="glyphicon glyphicon-play" style="margin-right: 5px"> </span>
+                        Resume
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <script src="dist/js/app.js"></script>
+
+    <script type='text/javascript'>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var page = new lib.app.Page();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "dn-timers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ping": "echo \"ACK\"",
+    "clean:js": "rimraf dist/js",
+    "build:webpack": "npm run clean:js && webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/knockout": "^3.4.64",
+    "@types/node": "^11.11.2",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "knockout": "^3.5.0",
+    "rxjs": "^6.4.0"
+  }
+}
